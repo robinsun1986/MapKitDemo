@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gNE-Dg-kNK">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lFw-OP-OLf">
+            <objects>
+                <navigationController id="gNE-Dg-kNK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MGZ-A6-nCN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8z2-Ni-zz7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRk-ih-qk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-500" y="337"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="rTM-wY-NcT">
+            <objects>
+                <viewController storyboardIdentifier="MKDChartViewController" id="49Z-Yp-ElD" customClass="MKDChartViewController" customModule="MapKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zc4-0M-6TS"/>
+                        <viewControllerLayoutGuide type="bottom" id="RKa-LS-mTF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="shD-0E-W4c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yi-BQ-6SS" customClass="HorizontalBarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="30" width="600" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Yi-BQ-6SS" firstAttribute="leading" secondItem="shD-0E-W4c" secondAttribute="leading" id="2F1-k2-5wj"/>
+                            <constraint firstItem="RKa-LS-mTF" firstAttribute="top" secondItem="7Yi-BQ-6SS" secondAttribute="bottom" constant="10" id="TJc-O8-Qdf"/>
+                            <constraint firstItem="7Yi-BQ-6SS" firstAttribute="top" secondItem="zc4-0M-6TS" secondAttribute="bottom" constant="10" id="mSV-Pz-ACv"/>
+                            <constraint firstAttribute="trailing" secondItem="7Yi-BQ-6SS" secondAttribute="trailing" id="wgT-v7-2Qk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="7Yi-BQ-6SS" id="Gkw-AN-PxH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7s-zL-Mzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-508" y="-413"/>
+        </scene>
+        <!--Watchlist View Controller-->
+        <scene sceneID="FMk-R7-i5F">
+            <objects>
+                <viewController storyboardIdentifier="MKDWatchlistViewController" automaticallyAdjustsScrollViewInsets="NO" id="hyr-0V-NYW" customClass="MKDWatchlistViewController" customModule="MapKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2yH-xp-QK7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sqt-bG-8AK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0V1-aP-Vvu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YJA-ap-hvq">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sqt-bG-8AK" firstAttribute="top" secondItem="YJA-ap-hvq" secondAttribute="bottom" id="Frg-Ux-geK"/>
+                            <constraint firstAttribute="trailing" secondItem="YJA-ap-hvq" secondAttribute="trailing" id="ba7-VW-u42"/>
+                            <constraint firstItem="YJA-ap-hvq" firstAttribute="top" secondItem="2yH-xp-QK7" secondAttribute="bottom" id="cNL-YX-4Xu"/>
+                            <constraint firstItem="YJA-ap-hvq" firstAttribute="leading" secondItem="0V1-aP-Vvu" secondAttribute="leading" id="dzn-9X-eJM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="YJA-ap-hvq" id="xyT-wJ-ILH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCI-Ge-ZHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="-383"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MKDViewController" customModule="MapKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Wu-Qd-Xxd">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PyX-Ax-IGO">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dUh-c9-6PQ"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oG2-Mo-1fH"/>
+                                </connections>
+                            </searchBar>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cnq-72-IaQ">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PyX-Ax-IGO" secondAttribute="trailing" id="4Ah-AL-v0V"/>
+                            <constraint firstAttribute="trailing" secondItem="4Wu-Qd-Xxd" secondAttribute="trailing" id="4zB-pG-Aaa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cnq-72-IaQ" secondAttribute="bottom" id="616-dp-JKs"/>
+                            <constraint firstItem="4Wu-Qd-Xxd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7bv-tR-FeS"/>
+                            <constraint firstItem="PyX-Ax-IGO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9Yy-hF-wUG"/>
+                            <constraint firstAttribute="bottom" secondItem="4Wu-Qd-Xxd" secondAttribute="bottom" id="ELn-yr-Ynu"/>
+                            <constraint firstAttribute="trailing" secondItem="cnq-72-IaQ" secondAttribute="trailing" id="Rhy-KT-sM2"/>
+                            <constraint firstItem="PyX-Ax-IGO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b7m-tI-HZM"/>
+                            <constraint firstItem="4Wu-Qd-Xxd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gUf-Nc-XXP"/>
+                            <constraint firstItem="4Wu-Qd-Xxd" firstAttribute="top" secondItem="PyX-Ax-IGO" secondAttribute="bottom" id="mYv-La-Roy"/>
+                            <constraint firstItem="cnq-72-IaQ" firstAttribute="top" secondItem="PyX-Ax-IGO" secondAttribute="bottom" id="rlt-L2-ECm"/>
+                            <constraint firstItem="cnq-72-IaQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tdW-W9-Fxy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7bv-tR-FeS"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="CXe-1t-MaS"/>
+                    <connections>
+                        <outlet property="countryMap" destination="4Wu-Qd-Xxd" id="IGs-we-PcS"/>
+                        <outlet property="countryTableView" destination="cnq-72-IaQ" id="070-tC-AkQ"/>
+                        <outlet property="searchBar" destination="PyX-Ax-IGO" id="N4g-1x-50P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="337"/>
+        </scene>
+    </scenes>
+</document>

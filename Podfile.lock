@@ -1,0 +1,15 @@
+PODS:
+  - Charts (2.2.5):
+    - Charts/Core (= 2.2.5)
+  - Charts/Core (2.2.5)
+  - DXCustomCallout-ObjC (0.2.0)
+
+DEPENDENCIES:
+  - Charts (~> 2.2.5)
+  - DXCustomCallout-ObjC
+
+SPEC CHECKSUMS:
+  Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
+  DXCustomCallout-ObjC: fb223603ee148365de51c2d69bb10443943ff89b
+
+COCOAPODS: 0.39.0
